@@ -31,12 +31,11 @@ def get_jobs():
             else:
                  skills = None  # Handle the case where the element is not found
             more_info = job.header.h2.a
-            
-            if skills is not None:
-                 with open(f'posts/{index}.txt', 'w') as f:
-                    f.write(f"Company Name: {company_name}\n")
-                    f.write(f"Required Skills: {skills}\n")
-                    f.write(f"More Info: {more_info.attrs['href']}\n")
+             
+            with open(f'posts/{index}.txt', 'w') as f:
+                f.write(f"Company Name: {company_name}\n")
+                f.write(f"Required Skills: {skills}\n")
+                f.write(f"More Info: {more_info.attrs['href']}\n")
 
                  # Print the extracted details
             print(f"Job {index + 1} details saved to posts/{index}.txt")
