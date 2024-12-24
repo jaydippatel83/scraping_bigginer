@@ -21,16 +21,11 @@ def scrape_cointopper_news():
 
         news_data = []
         for card in news_cards:
-            try:
-                # Extract the title
-                title = card.query_selector('h2').inner_text()
-                # Extract the date
-                date = card.query_selector('span.text-pgray-400').inner_text()
-                # Extract the link
-                link = card.query_selector('a').get_attribute('href')
-                # Extract tags
-                tags = [tag.inner_text() for tag in card.query_selector_all('span[class*="bg-slate-50"]')]
-                # Extract image URL
+            try: 
+                title = card.query_selector('h2').inner_text() 
+                date = card.query_selector('span.text-pgray-400').inner_text() 
+                link = card.query_selector('a').get_attribute('href') 
+                tags = [tag.inner_text() for tag in card.query_selector_all('span[class*="bg-slate-50"]')] 
                 image_url = card.query_selector('img').get_attribute('src')
 
                 # Append the extracted data
